@@ -1,0 +1,416 @@
+header{
+    background-color: $offwhite;
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 10000;
+    min-height: 120px;
+    @include transition;
+    @include respond-to(sm) {
+        min-height: 80px;
+    }
+    @include respond-to(mobile) {
+        min-height: 80px;
+    }
+    .container{
+        .header_wrap {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            &:after{
+                content:"";
+                clear: both;
+            }
+            @include respond-to('sm') {
+                padding: 10px 0;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                height: 60px;
+            }
+            .logo {
+                float:left;
+                text-align: left;
+                display: block;      
+                height: 37px;       
+                @include respond-to(md){
+                    padding: 20px 0;
+                    width: 25%;
+                    max-width: 320px;
+                    
+                }
+                @include respond-to(sm){
+                    padding:10px 0;
+                    width: 65%;
+                    max-width: 250px;
+                    
+                }
+                @include respond-to(mobile){
+                    padding:10px 0;
+                    width: 65%;
+                    max-width: 250px;
+                }
+                @include respond-to(tablet){
+                    padding:10px 0;
+                    width: 65%;
+                    max-width: 250px;
+                }
+                @include respond-to('lg'){
+                    text-align: center
+                }
+                @include transition;
+                a{
+                    border-bottom: 0;
+                    height: 0px;
+                    display: inline-block;
+                    justify-content: center;
+                }
+                svg{
+                    width:100%;
+                         #Group_16{
+                            opacity: 1;
+                            @include transition;
+                        }
+                        #Group_18{
+                            path{
+                                @include transition;
+                            }
+                        }
+    
+                }
+                .logo_big {
+                    @include transition;
+                    height: 87px;
+                    opacity: 1;
+                    @include respond-to('xl'){
+                        height: 100px;
+                        @include transition; 
+                    }
+                    &.hide {
+                        @include transition;
+                        opacity: 0;
+                        height: 0px;
+                    }
+                }
+                .logo_small {
+                    height: 0px;
+                    opacity: 0;
+                    @include transition;
+                    &.show {
+                        height: 37px;
+                        opacity: 1;
+                        @include transition;
+                        @include respond-to(md){
+                            height: 47px;
+                            @include transition;    
+                        }
+                    }
+                }
+                .logo_small_mob {
+                    height: 37px;
+                    @include transition;
+                    &.show {
+                        @include respond-to(md){
+                            height: 47px;
+                            @include transition;    
+                        }
+                    }
+                }
+            }
+            .nav_left {
+                ul {
+                    text-align: left;
+                    li {
+                        margin-left: 0;
+                        margin-right: 1em;
+                        a{
+                            font-family: $primarysemi-font;
+                        }
+                    }
+                }
+            }
+            .nav_right {
+                ul {
+                    text-align: right;
+                    li {
+                        margin-left: 1em;
+                        a{
+                            font-family: $primarysemi-font;
+                        }
+                    }
+                }
+            }
+            .nav{
+                display: none;
+                @include respond-to(md){
+                    display: block;
+                }
+                @include respond-to(mobile){
+                    display: none;
+                }
+                @include respond-to(tablet){
+                    display: none;
+                }
+                width: 75%;
+                float: right;
+                text-align: right;
+                // margin-top: 10px;
+                @include transition;
+                ul{
+                    margin-bottom: 0;
+                    li{
+                        display: inline;
+                        a{  
+                            font-family: 'General Sans Medium', sans-serif;
+                            text-decoration: none;
+                            font-weight: 400 !important;
+                            font-size: 16px;
+                            text-transform: uppercase;
+                            color: black;
+                        }
+                        &.button{
+                            a{
+                                @include buttonsecond;
+                                margin-bottom: -20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .mobile_nav{
+                display: block;
+                position: fixed;
+                top: 110px;
+                right:-100%;
+                width: 100%;
+                padding: 50px 0 100px 0;
+                height: 100vh;
+                background-color: $lightseagreen;
+                z-index: 9999;
+                @include transition;
+                @include respond-to(md){
+                    display: none;
+                }
+                @include respond-to(mobile){
+                    display: block;
+                }
+                @include respond-to(tablet){
+                    display: block;
+                }
+                &.active{
+                    right:0;
+                    @include transition;
+                }
+
+
+                ul{
+                    margin-top: 20px;
+                    li{
+                        display: block;
+                        margin-top: 10px;
+                        margin-left: 30px;
+                        margin-bottom: 20px;
+                        a{
+                            text-decoration: none;
+                            border-bottom:1px solid transparent;
+                            color: $black;
+                            font-weight: 400;
+                            font-size: 32px;
+                            font-family: $primary-font;
+                            text-transform: uppercase;
+                            &:hover{
+                                border-bottom:1px solid $coral;
+                            }
+                        }
+                        &.button{
+                            a{
+                                @include buttondefault;
+                                margin-bottom: -20px;
+                            }
+                        }
+                        &:nth-child(5){
+                            margin-top: 50px;
+                            margin-bottom: 10px;
+                            a{
+                                font-size: 20px;
+                            }
+                        }
+                        &:nth-child(6){
+                            margin-bottom: 10px;
+                            a{
+                                font-size: 20px;
+                            }
+                        }
+                        &:nth-child(7){
+                            margin-bottom: 10px;
+                            a{
+                                font-size: 20px;
+                            }
+                        }
+                        &:nth-child(8){
+                            margin-bottom: 10px;
+                            a{
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+                .contact{
+                    color:$black;
+                    margin-left: 30px;
+                    margin-top:30px;
+                    a{
+                        color:$black;
+                    }
+                }
+                .header_search {
+                    form {
+                        input[type=text] {
+                            border: solid 1px $black;
+                            margin-bottom: 0;
+                            margin-top: 0;
+                            background-color: $white;
+                            color: $black;
+                      
+                        }   
+                        input[type=submit] {
+                            margin-bottom: 0;
+                            @include transition;
+                            &:hover {
+                                background-color: $offwhite;
+                                color:$black;
+                                @include transition;
+                            }
+                        }             
+                    }
+                }
+            }
+            .menu_icon{
+                display: block;
+                float: right;
+                margin-top: 0;
+                text-align: right;
+                h3 {
+                    .open{
+                        display: none;
+                    }
+                    .closed{
+                        display: initial;
+                    }
+                    .cross{
+                        top: 1px;
+                        position: relative;
+                        @include transition;
+                        display: inline-block;
+                        font-size: 32px;
+                        @include rotate(0deg);
+                        &:hover{
+                            @include transition;
+                            display: inline-block;
+                            @include rotate(90deg);
+    
+                        }
+                    }
+                font-family: $primary-font;
+                    font-weight: 200;
+                    margin-bottom: 0;
+                }
+                #menu_top{
+                    @include transition;
+                    opacity: 1;
+                }
+                #menu_midone{
+                    @include transition;
+                    
+                }
+                #menu_midtwo{
+                    opacity: 0;
+                    @include transition;
+                    
+                }
+                #menu_bot{
+                    @include transition;                
+                    opacity: 1;
+                }
+                @include respond-to(md){
+                    display: none;
+                }
+                @include respond-to(mobile){
+                    display: block;
+                }
+                @include respond-to(tablet){
+                    display: block;
+                }
+                &.active{
+                    #menu_top{
+                        opacity: 0;
+                        @include transition;
+                    }
+                    #menu_midone{
+                        @include rotate(45deg);
+                        transform-origin: center;
+                        @include transition;
+    
+                    }
+                    #menu_midtwo{
+                        @include rotate(-45deg);
+                        transform-origin: center;
+                        opacity: 1;
+                        @include transition;
+    
+                    }
+                    #menu_bot{
+                        opacity: 0;
+                        @include transition;   
+                    }
+                }
+                &.active{
+                    h3 {
+                        .open{
+                            display: initial;
+                        }
+                        .closed{
+                            display: none;
+                        }
+                        .cross{
+                            @include transition;
+                            display: inline-block;
+                            @include rotate(135deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.scroll{
+        min-height: 80px;
+        .container{
+            .logo{
+                padding: 10px 0;
+                @include transition;
+                &.long_scroll{
+                    svg{
+                        #Group_16{
+                            opacity: 0;
+                            @include transition;
+                        }
+                        #Group_18{
+                            path{
+                                @include transition;
+                            }
+                        }
+                    }
+                }
+            }
+            .nav{
+                margin-top:0;
+                @include transition;
+            }
+        }
+        @include transition;
+    }
+    &.show{
+        min-height: 80px;
+        @include transition;
+    }
+}

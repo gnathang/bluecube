@@ -1,0 +1,12 @@
+.btn_default {
+    @include buttondefault;
+}
+.btn_second{
+    @include buttonsecond;
+}
+.btn_third{
+    @include buttonthird;
+}
+.btn_fourth{
+    @include buttonfourth;
+}

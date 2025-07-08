@@ -1,0 +1,39 @@
+.accordion_wrap{
+    &.two-text-col{
+        .flex_between{
+            align-items: center;
+            border-bottom: 1px solid $black;
+            margin-bottom: 50px;
+            h3{
+                width: 100%;
+                @include respond-to(md){
+                    width: 35%;
+                    margin-bottom: 10px;
+                }
+                display: flex;
+            }
+            p{
+                width: 100%;
+                @include respond-to(md){
+                    width: 75%;
+                    margin-left: 30%;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        }
+    @include accordion;
+    .accordion{
+        .flex_wrap{
+            h4{
+                font-family: $primary-font;
+                text-transform: none;
+            }
+            cursor: pointer;
+            // cursor: url('/wp-content/themes/designdough/assets/images/svg/cursor-plus.svg') 15 15,url('/wp-content/themes/designdough/assets/images/svg/cursor-plus.svg') 15 15,move;
+            // &.open{
+            //     cursor: url('/wp-content/themes/designdough/assets/images/svg/cursor-minus.svg') 15 15,url('/wp-content/themes/designdough/assets/images/svg/cursor-minus.svg') 15 15,move;
+            // }
+        }
+    }
+}

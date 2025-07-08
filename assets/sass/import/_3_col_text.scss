@@ -1,0 +1,86 @@
+.three_col_text{
+    padding: 50px 0;
+    @include respond-to(sm){
+        padding: 20px 0;
+    }
+    @include borderradiustop;
+    @include backgroundtext;
+    .flex_between{
+        align-items: center;
+        &.col_header{
+            border-bottom: 1px solid $white;
+        }
+        h3{
+            width: 100%;
+            @include respond-to(md){
+                width: 25%;
+            }
+        }
+        p{
+            width: 100%;
+            @include respond-to(md){
+                width: 66%;
+            }
+        }
+    }
+    .three_col_grid{
+        margin-top: 40px;
+        @include respond-to(md){
+            margin-top: 100px;
+        }
+        .three_col{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1%;
+            margin-top: 100px;
+            @include respond-to(sm){
+                flex-direction: row;
+            }
+            .col_item{
+                width: 32%;
+                margin-bottom: 40px;
+                @include respond-to(sm){
+                    width: 100%;
+                }    
+                h3{
+                    border-bottom: 1px solid $whitealpha;
+                    padding-bottom: 30px;
+                    display: flex;
+                    align-items: center;
+                    &::before{
+                        content: "";
+                        background-image: url('/wp-content/themes/designdough/assets/images/svg/texture-icon-white-one.svg');
+                        height: 50px;
+                        width: 50px;
+                        background-repeat: no-repeat;
+                        margin-right: 40px;
+                    }
+                }
+                &:nth-child(3n+1){
+                    h3{
+                        &::before{
+                            background-image: url('/wp-content/themes/designdough/assets/images/svg/texture-icon-white-one.svg');
+                        }
+                    }
+                }
+                &:nth-child(3n+2){
+                    h3{
+                        &::before{
+                            background-image: url('/wp-content/themes/designdough/assets/images/svg/texture-icon-white-two.svg');
+                        }
+                    }
+                }
+                &:nth-child(3n+3){
+                    h3{
+                        &::before{
+                            background-image: url('/wp-content/themes/designdough/assets/images/svg/texture-icon-white-three.svg');
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,248 @@
+.staggered_section{
+    // override main section styles
+    padding-bottom: 20px !important;
+    .stag_trig{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 110px;
+        @include borderradiustop;
+        @include backgroundtext;
+        padding-bottom: 20px;
+        margin-bottom: -20px;
+        padding-top: 10px;
+        @include transition;
+        @include respond-to(sm){
+            position: relative;
+        }
+        .container{
+            margin-bottom: 100px;
+        }
+        &.stag_trig_1{
+            top: 110px;
+            @include respond-to(sm){
+                top: 100px;
+            }
+        }
+        &.stag_trig_2{
+            top: 140px;
+            @include respond-to(sm){
+                top: 100px;
+            }
+        }
+        &.stag_trig_3{
+            top: 170px;
+            @include respond-to(sm){
+                top: 100px;
+            }
+        }
+        &.stag_trig_4{
+            top: 200px;
+            @include respond-to(sm){
+                top: 100px;
+            }
+        }
+        &.stag_trig_5{
+            top: 230px;
+            @include respond-to(sm){
+                top: 100px;
+            }
+        }
+        &.stag_trig_6{
+            top: 260px;
+            // fix overlapping problem
+            min-height: 680px;
+            @include respond-to(sm){
+                top: 100px;
+            }
+        }
+        .flex_start{
+            display: flex;
+            flex-wrap: wrap;            
+            gap: 40px;
+            align-items: center;
+            margin-top: 30px;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid $white;
+            @include respond-to(sm){
+                align-items: flex-start;
+            }
+            .staggered_cards_title{
+                text-transform: uppercase;
+                border-bottom: 0;
+                margin-bottom: 0;
+            }
+            p {
+                min-width: 100px;
+                @include respond-to(sm){
+                    display: none;
+                }
+            }
+            h3{
+                width: 80%;
+            }
+            // this is the styling for the featured post on the 'Latest' page.  
+            .title {
+                text-transform: uppercase;
+                border-bottom: none;
+            }
+        }
+        .slider {
+            .slick-dots{
+                width: 60px;
+                left: 0;
+                top:14px;
+                li{
+                    display: block;
+                    height: 40px;
+                    width: 60px;
+                    button{
+                        color: $white;
+                        border-radius: 100%;
+                        border:0;
+                        font-size: 20px;
+                        &::before{
+                            content: "";
+                        }
+                    }
+                    &.slick-active{
+                        button{
+                            background-color: transparent;
+                        }
+                    }
+                    &:hover{
+                        button{
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+            .slick-next{
+                right: 60px;
+                top:20px;
+                height: 35px;
+                width: 35px;
+                background-size: cover;
+                z-index: 100;
+                background-image: url('/wp-content/themes/designdough/assets/images/svg/arrow-next.svg');
+                &::before{
+                    content: "";
+                }
+                @include respond-to('sm') {
+                    right: 0;
+                }
+            }
+            .slick-prev{
+                top:20px;
+                left: calc(100% - 150px);
+                height: 35px;
+                width: 35px;
+                background-size: cover;
+                z-index: 100;
+                background-image: url('/wp-content/themes/designdough/assets/images/svg/arrow-prev.svg');
+                &::before{
+                    content: "";
+                }
+                @include respond-to('sm') {
+                    left: calc(100% - 50px);
+                }
+
+            }
+        }
+        .pre_text{
+            width: 70%;
+            margin-left: 100px;
+        }
+        .slide_wrap{
+            .flex_wrap{
+                .content{
+                    width: calc(85% - 100px);
+                    @include respond-to(sm){
+                        width: calc(100% - 10px);
+                    }
+                }
+                .arrow{
+                    width: 100px;
+                    @include respond-to(sm){
+                        width: 20px;
+                    }
+                    svg{
+                        @include transition;
+                    }
+                }
+                .textarea{
+                    margin-top: 0px;
+                    width: 100%;
+                    @include transition;
+                    @include respond-to(sm){
+                        width: 100%;
+                    }
+                    ol{
+                        li{
+                            margin-bottom: 10px;
+                            &::marker{
+                                font-size: 18px;
+                                line-height: 27px;
+                                color: $white;
+                            }
+                        }
+                    }
+        
+                }
+            }
+            padding-bottom: 0px;
+        }
+        .text_wrap{
+            width: 70%;
+            margin-left: 100px;
+            margin-bottom: 0px;
+        }
+        .slick-slider{
+            cursor: grab;
+        }
+        &.lightseagreen{
+            .flex_start{
+                border-bottom: 1px solid $black;
+                ol{
+                    li{
+                        margin-bottom: 10px;
+                        &::marker{
+                            font-size: 18px;
+                            line-height: 27px;
+                            color: $black;
+                        }
+                    }
+                }
+            }
+            .slider{
+                button.slick-next {
+                    &:before {
+                        content: url('/wp-content/themes/designdough/assets/images/svg/arrow-next-black.svg');
+                    }
+                }
+                button.slick-prev {
+                    &:before {
+                        content: url('/wp-content/themes/designdough/assets/images/svg/arrow-prev-black.svg');
+                    }
+                }        
+            }
+        }
+        &.white{
+            .flex_start{
+                border-bottom: 1px solid $black;
+                ol{
+                    li{
+                        margin-bottom: 10px;
+                        &::marker{
+                            font-size: 18px;
+                            line-height: 27px;
+                            color: $black;
+                        }
+                    }
+                }
+            }
+        }
+   }
+
+}

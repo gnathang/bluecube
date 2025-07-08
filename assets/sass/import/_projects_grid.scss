@@ -1,0 +1,140 @@
+
+.section_projects_grid {
+    .container {
+        .title_wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: solid 1px black;
+            margin-bottom: 30px;
+            .title {
+                margin-bottom: 30px;
+                display: flex !important;
+            }
+        }
+        .projects_grid {
+            display: grid;
+            gap: 20px;
+            align-items: flex-start;
+            &.two_columns {
+                @include respond-to ('md') {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+            &.three_columns {
+                @include respond-to ('md') {
+                    grid-template-columns: 1fr 1fr;
+                }
+                @include respond-to ('lg') {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+               
+            }
+
+            .project_wrap {
+                display: block;
+                width: 100%;
+                &.featured {
+                    grid-column: 1/-1;
+                }
+                .image_wrap {
+                    width: 100%;
+                    height: 50vh;
+                    @include respond-to('lg') {
+                        height: 70vh;
+                    }
+                    background-size: cover;
+                }
+                .text_wrapper {
+                    .text_title_wrapper {
+                        border-bottom: solid 1px black;
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        padding: 20px 0;
+                        text-transform: uppercase;
+                        @include respond-to(sm){
+                            gap: 10px;
+                            padding-top: 0;
+                            flex-direction: column;
+                            align-content: flex-start;
+                        }
+                        @include respond-to('lg') {
+                            gap: 20px;
+                            // min-height: 180px;
+                        }
+                        .partners_wrap{
+                            width: auto;
+                            display: inline-flex;
+                            gap: 10px;
+                            flex-wrap: wrap;
+                            justify-content: start;
+                        }
+                        .date {
+                            display: block;
+                        }
+                        h3, h5, h5, .divider {
+                            font-weight: 100;
+                            text-transform: uppercase;
+                            margin-bottom: 0;
+                        }
+                        h6 {
+                            @include cat_loc_tag;
+                            margin-bottom: 0;
+                        }
+                        h3 {
+                            @include respond-to('sm') {
+                                flex-basis: 100%;
+                                margin-top: 10px;
+                            }
+                        }
+                        .divider {
+                            display: none;
+                            @include respond-to('xl') {
+                                display: block;
+                            }
+                        }
+                        p {
+                            margin-bottom: 0px;
+                        }
+                        .remove_hov_effect {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            gap: 20px;
+                        }
+                        .read_more {
+                            margin-top: 0;
+                            align-self: flex-start;
+                        }
+                    }
+                    .text_body_wrapper {
+                        // @include respond-to('lg') {
+                        //     height: 160px;
+                        // }
+                        padding-top: 20px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        border-bottom: 1px solid    $black;
+                        @include respond-to('sm') {
+                            border-top: 1px solid $black;
+                            flex-wrap: wrap;
+                        }
+                        .read_more {
+                            flex-basis: 20%;
+                            margin-top: 0;
+                            margin-bottom: 30px;
+                            text-align: right;
+                            @include respond-to('sm') {
+                                flex-basis: unset;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

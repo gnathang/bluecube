@@ -1,0 +1,103 @@
+.two-text-col {
+    .two_col_grid {
+        display: grid;
+        @include respond-to('md') {
+            grid-template-columns: 1fr 1fr;
+            padding-bottom: 80px;
+            div{
+                padding-right: 50px;
+            }
+        }
+        a{
+            // @include textlink;
+        }
+        h3 {
+            @include h-threesmall;
+        }
+        .wpcf7 {
+            input[type=submit] {
+                @include buttonfourth;
+            }
+        }
+    }
+    .two_col_text_title {
+        text-transform: uppercase;
+        border-bottom: solid 1px $black;
+        font-weight: normal;
+        margin-bottom: 70px;
+        padding-bottom: 15px;
+        @include respond-to(sm){
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        display: flex;
+    }
+    .images {
+        img {
+            object-fit: contain;
+            max-height: 430px;
+            margin-right: 40px;
+            @include respond-to('sm') {
+                height: auto;
+                margin-top: 50px;
+            }
+        }
+        button.slick-prev,
+        button.slick-next {
+            @include respond-to('sm') {
+                margin-bottom: 10px;
+            }
+        }
+
+        button.slick-next {
+            @include respond-to(md){
+                display: none!important;
+            }
+            top: 10%;
+            right: 25px;
+            &:before {
+                content: url('/wp-content/themes/designdough/assets/images/svg/arrow-next-black.svg');
+                white-space: nowrap;
+                font-family: $primary-font;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1;
+                color: black;
+                opacity: 0.75;
+            }
+        }
+        button.slick-prev {
+            @include respond-to(md){
+                display: none!important;
+            }
+            top: 10%;
+            left: calc(100% - 65px);
+            z-index: 10000;
+            &:before {
+                content: url('/wp-content/themes/designdough/assets/images/svg/arrow-prev-black.svg');
+                white-space: nowrap;
+                font-family: $primary-font;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1;
+                color: black;
+                opacity: 0.75;
+            }
+        }
+        .slick-dots{
+            display: none!important;
+        }
+    }
+    .container{
+        img{
+            padding:30px 0;
+        }
+    }
+}
+
+.slick-slider{
+    cursor: url('/wp-content/themes/designdough/assets/images/svg/cursor-drag.svg') 15 15,url('/wp-content/themes/designdough/assets/images/svg/cursor-drag.svg') 15 15,move;
+    @include respond-to(sm) {
+        margin-bottom: 0!important;
+    }
+}

@@ -1,0 +1,64 @@
+.big-text{
+    &.bg_white{
+        text-align: center;
+        background-color: $white;
+        .text_pad{
+            h1,h2,h3,h4,h5,h6,p,a{
+                color: $black;
+            }
+            .button{
+                @include buttonsecond;
+            }
+        }
+    }
+    &.bg_primary{
+        text-align: center;
+        background-color: $coral;
+        .text_pad{
+            h1,h2,h3,h4,h5,h6,p,a{
+                color: $white;
+            }
+            .button{
+                @include buttonthird;
+            }
+        }
+    }
+    &.bg_secondary{
+        text-align: center;
+        background-color: $offblack;
+        .text_pad{
+            h1,h2,h3,h4,h5,h6,p,a{
+                color: $white;
+            }
+            .button{
+                @include buttonsecond;
+            }
+        }
+    }
+    &.bg_image{
+        background-size: cover;
+        background-position: center;
+        .text_pad{
+            .content{
+                @include slidebg;
+                position: relative;
+                @include respond-to(md){
+                    position: relative;                
+                }
+            }
+        }
+    }
+
+    .text_pad{
+        &.full_height{
+            @include textboxpad;
+            width:90%;
+            @include respond-to(md){
+                width:100%;                
+            }
+        }    
+        &.half_height{
+            @include textboxsmallpad;    
+        }
+    }    
+}

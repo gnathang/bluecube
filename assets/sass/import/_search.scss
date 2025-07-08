@@ -1,0 +1,118 @@
+
+.page_header_search {
+    .page_header_title_wrap {
+        height: 45vh;
+    }
+}
+.flex_wrap_search{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 0 ;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    @include respond-to('md') {
+        display: grid;
+        grid-template-columns: 1fr 0.2fr;
+    }
+    grid-template-columns: 1fr 0.2fr;
+    @include respond-to('lg') {
+        grid-template-columns: 0.5fr 4fr 1.5fr 4fr 1fr;
+    }
+    gap: 20px;
+    border-bottom: 1px solid $black;
+    &:last-child {
+        border-bottom: none;
+    }
+    .cat_butt{
+        width: 150px;
+        .btn_fourth{
+            padding: 3px 15px;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-family: $secondary-font;
+            &.Report{
+                border-color: $seagreen ;
+                color: $seagreen;
+                &:hover{
+                    background-color: $seagreen;
+                    color: $white;
+                }
+            }
+            &.Method{
+                border-color: $lightblue ;
+                color: $lightblue;
+                &:hover{
+                    background-color: $lightblue;
+                    color: $white;
+                }
+            }
+            &.Article{
+                border-color: $coral ;
+                color: $coral;
+                &:hover{
+                    background-color: $coral;
+                    color: $white;
+                }
+            }
+        }
+    }
+    .pub_title{
+        h4{
+            margin-bottom: 0;
+            font-family: $primary-font;
+            text-transform: uppercase;
+        }
+    }
+    .description{
+        p {
+            margin-bottom: 0;
+        }
+    }
+    .down_butt{
+        a{
+            white-space: nowrap;
+            text-transform: uppercase;
+            font-weight: 400;
+            margin-top: 0;
+            svg{
+                margin-left: 10px;
+            }
+        }
+    }
+    @include transition;
+    height: auto;
+    opacity: 1;
+    &.hide {
+        height: 0;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+        @include transition;
+    }
+}
+.search {
+    .cat_col {
+        .btn_fourth {
+            // background-color: $coral;
+            color: black;
+            margin-top: 0;
+            font-family: $primarysemi-font;
+            padding: 5px 14px;
+            &:hover {
+                background-color: $black;
+                color: white;
+            }
+        }
+        @include respond-to('md') {
+            order: -1;
+        }
+        @include respond-to('lg') {
+            order: unset;
+        }
+    }
+}
+

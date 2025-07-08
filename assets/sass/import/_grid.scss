@@ -1,0 +1,597 @@
+/* Always import the mixins file incase you need them! */
+
+@import "mixins";
+
+/* Get your SASS in now! */
+
+body{
+    &.no-scroll{
+        overflow: hidden;
+    }
+    z-index: 1;
+    position: relative;
+    .site_bg {
+        background-color: $offwhite;
+        z-index: 2;
+        position: relative;
+    }
+}
+
+.container {
+    @include container;
+    @include respond-to('xl'){
+      @include bigcontainer;
+    }
+    margin: $zeroauto;
+	 }
+
+.container_nopad {
+		position: relative;
+		width: $v100;
+		max-width: 1600px;
+		min-width:725px;
+		margin: $zeroauto;
+	}
+
+.row{
+    width:$v100;
+    margin-bottom: $px20;
+    }
+
+
+section {
+    position: relative;
+    z-index: 3;
+    background-color: $offwhite;
+    padding: 30px 0;
+    @include respond-to('md'){
+        padding: 100px 0;
+    }
+    
+    // &:first-child{
+    //     background-color: none;
+    //     padding: 0 0 30px 0;
+    //     @include respond-to('md'){
+    //         padding: 0 0 60px 0;
+    //     }        
+    // }
+    &:nth-child(2){
+        padding: 80px 0 30px 0;
+        @include respond-to('md'){
+           padding: 100px 0 60px 0;
+        }        
+    }
+    // &.row-1{
+    //     padding: 0 0 30px 0;
+    //     @include respond-to('md'){
+    //         padding: 0 0 60px 0;
+    //     }        
+    // }
+}
+
+
+    /* Base Grid */
+
+.one_half {
+    width:$onehalf;
+}
+.one_third {
+    width:$onethird;
+}
+.two_thirds {
+    width:$twothirds;
+    }
+.one_fourth {
+    width:$onefourth;
+    }
+.three_fourths {
+    width:$threefourths;
+    }
+.one_fifth {
+    width:$onefifth;
+    }
+.two_fifths {
+    width:$twofifths;
+    }
+.three_fifths {
+    width:$threefifths;
+    }
+.four_fifths {
+    width:$fourfifths;
+    }
+.one_sixth {
+    width:$onesixth;
+    }
+.five_sixths {
+    width:$fivesixths;
+    }
+
+.one_half,
+.one_third,
+.two_thirds,
+.three_fourths,
+.one_fourth,
+.one_fifth,
+.two_fifths,
+.three_fifths,
+.four_fifths,
+.one_sixth,
+.five_sixths
+  	{
+  	position: relative;
+  	margin: $gridmargin;
+    }
+
+.last{
+    margin-right:$v0;
+}
+
+.loop{
+    .one_half{
+        &:nth-child(2n+2){
+      	   margin-right: 0%;
+        }
+        &:nth-child(2n+1){
+        	 @include clear;
+        }
+    }
+    .one_third{
+        &:nth-child(3n+3){
+           margin-right: 0%;
+        }
+        &:nth-child(3n+1){
+           @include clear;
+        }
+    }
+    .one_fourth{
+        :nth-child(4n+4){
+          margin-right: 0%;
+        }
+        &:nth-child(4n+1){
+           @include clear;
+        }
+    }
+    .one_fifth{
+        :nth-child(5n+5){
+          margin-right: 0%;
+        }
+        &:nth-child(5n+1){
+           @include clear;
+        }
+    }
+    .one_sixth{
+        :nth-child(6n+6){
+          margin-right: 0%;
+        }
+        &:nth-child(6n+1){
+           @include clear;
+        }
+    }
+}
+
+.full_width {
+    position: relative;
+    width:$v100;
+    height:$auto;
+}
+
+
+.one_half_nopad { width:calc(50% - 100px); }
+.one_third_nopad { width: calc(33.33% - 100px); }
+.two_thirds_nopad { width:calc(66.66% - 100px); }
+.one_fourth_nopad { width: calc(25% - 100px); }
+.three_fourths_nopad { width: calc(75% - 100px); }
+.one_fifth_nopad { width: calc(20% - 100px); }
+.two_fifths_nopad { width: calc(40% - 100px); }
+.three_fifths_nopad { width: calc(60% - 100px); }
+.four_fifths_nopad { width: calc(80% - 100px); }
+.one_sixth_nopad { width: calc(16.66% - 100px); }
+.five_sixths_nopad { width: calc(83.33% - 100px); }
+
+.one_half_nopad,
+.one_third_nopad,
+.two_thirds_nopad,
+.three_fourths_nopad,
+.one_fourth_nopad,
+.one_fifth_nopad,
+.two_fifths_nopad,
+.three_fifths_nopad,
+.four_fifths_nopad,
+.one_sixth_nopad,
+.five_sixths_nopad
+	{
+	position: relative;
+	padding: $px50;
+}
+
+
+.flex_wrap{
+    display: flex;
+    flex-direction: row;
+    @include respond-to(mobile){
+        flex-direction: column;
+    }
+    @include respond-to(sm){
+        flex-direction: column;
+    }
+}
+
+.flex_start{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    @include respond-to(mobile){
+        flex-direction: column;
+    }
+    @include respond-to(sm){
+        flex-direction: column;
+    }
+}
+
+.flex_end{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    @include respond-to(mobile){
+        flex-direction: column;
+    }
+    @include respond-to(sm){
+        flex-direction: column;
+    }
+}
+
+.flex_center{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    @include respond-to(mobile){
+        flex-direction: column;
+    }
+    @include respond-to(sm){
+        flex-direction: column;
+    }
+}
+
+
+.flex_between{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    @include respond-to(mobile){
+        flex-direction: column;
+    }
+    @include respond-to(sm){
+        flex-direction: column;
+    }
+}
+
+.flex_evenly{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    @include respond-to(mobile){
+        flex-direction: column;
+    }
+    @include respond-to(sm){
+        flex-direction: column;
+    }
+}
+
+
+.left{
+	float:left;
+	}
+
+.right{
+	float:right;
+	}
+
+.center{
+	margin:$zeroauto;
+	}
+
+.alignleft{
+	float:left;
+	padding: 10px 5% 10px 0;
+	}
+
+.alignright{
+	float:right;
+	padding: 10px 0 10px 5%;
+	}
+
+.aligncenter{
+	display:block;
+	margin:0 auto;
+	}
+
+.center{
+	margin:0 auto;
+	}
+
+.text_center{
+	text-align:center;
+	}
+
+.text_right{
+	text-align:right;
+	}
+
+
+.fade-in .container {
+  opacity: 0;
+  transform: translate(0, 10vh);
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+
+.fade-in.visible .container{
+  opacity: 1;
+  transform: translate(0, 0);
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.fade-in:first-child .container{
+  opacity: 1;
+  transform: translate(0, 0);
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+
+
+
+/* #Clearing
+================================================== */
+
+    /* Self Clearing Goodness */
+    .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+    /* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+    .clearfix:before,
+    .clearfix:after,
+    .row:before,
+    .row:after {
+      content: '\0020';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+    .row:after,
+    .clearfix:after {
+      clear: both; }
+    .row,
+    .clearfix {
+      zoom: 1; }
+
+    /* You can also use a <br class="clear" /> to clear columns */
+    .clear {
+      clear: both;
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+
+
+
+.last {margin-right:0 !important;padding-right:0 !important;}
+
+img{
+	width:100%;
+	height:auto;
+	object-fit: contain;
+
+	}
+
+iframe{
+	max-width:100%;
+	min-height: auto;
+}
+
+
+/* Table of Contents
+==================================================
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+
+/* #Site Styles
+================================================== */
+
+
+/* #Media Queries
+================================================== */
+
+@include respond-to(tablet){
+        .container { max-width:1024px; min-width: 220px; padding:0 70px; width:calc(100% - 140px); }
+
+        .container_no_pad { max-width:1024px; min-width: 280px; padding:0px; width:100%; }
+	.columns, .column { margin: 0 auto; }
+
+		.one_half,
+    	.one_third,
+ 		.two_thirds,
+		.one_fourth,
+ 		.three_fourths,
+    	.one_half,
+    	.one_fifth,
+    	.two_fifths,
+    	.three_fifths,
+    	.four_fifths,
+		.one_sixth,
+		.two_sixths,
+		.three_sixths,
+		.four_sixths,
+		.five_sixths
+		{ width: 100%; }
+
+
+    #content						{ width:100%; float:none; }
+    #sidebar						{ width:100%; float:none;}
+
+.left{
+	float:none;
+	}
+
+.right{
+	float:none;
+	}
+
+.one_half_nopad,
+.one_third_nopad,
+.two_thirds_nopad,
+.three_fourths_nopad,
+.one_fourth_nopad,
+.one_fifth_nopad,
+.two_fifths_nopad,
+.three_fifths_nopad,
+.four_fifths_nopad,
+.one_sixth_nopad,
+.five_sixths_nopad
+	{
+	width:calc(100% - 60px);
+	padding: 30px;
+}
+
+}
+
+
+@include respond-to(mobile){
+        .container { max-width:1024px; min-width: 220px; padding:0 30px; width:calc(100% - 60px); }
+
+
+    .container_nopad {
+		max-width: 1024px;
+		min-width:280px;
+		margin: 0 auto;
+	}
+
+
+        .container_no_pad { max-width:1024px; min-width: 280px; padding:0px; width:100%; }
+	.columns, .column { margin: 0 auto; }
+
+		.one_half,
+    	.one_third,
+ 		.two_thirds,
+		.one_fourth,
+ 		.three_fourths,
+    	.one_half,
+    	.one_fifth,
+    	.two_fifths,
+    	.three_fifths,
+    	.four_fifths,
+		.one_sixth,
+		.two_sixths,
+		.three_sixths,
+		.four_sixths,
+		.five_sixths
+		{ width: 100%; }
+
+
+    #content						{ width:100%; float:none; }
+    #sidebar						{ width:100%; float:none;}
+
+.left{
+	float:none;
+	}
+
+.right{
+	float:none;
+	}
+
+.one_half_nopad,
+.one_third_nopad,
+.two_thirds_nopad,
+.three_fourths_nopad,
+.one_fourth_nopad,
+.one_fifth_nopad,
+.two_fifths_nopad,
+.three_fifths_nopad,
+.four_fifths_nopad,
+.one_sixth_nopad,
+.five_sixths_nopad
+	{
+	width:calc(100% - 60px);
+	padding: 30px;
+}
+
+	}
+
+
+@include respond-to(sm){
+        .container { max-width:1024px; min-width: 220px; padding:0 30px; width:calc(100% - 60px); }
+
+
+    .container_nopad {
+		max-width: 1024px;
+		min-width:280px;
+		margin: 0 auto;
+	}
+
+
+        .container_no_pad { max-width:1024px; min-width: 280px; padding:0px; width:100%; }
+	.columns, .column { margin: 0 auto; }
+
+		.one_half,
+    	.one_third,
+ 		.two_thirds,
+		.one_fourth,
+ 		.three_fourths,
+    	.one_half,
+    	.one_fifth,
+    	.two_fifths,
+    	.three_fifths,
+    	.four_fifths,
+		.one_sixth,
+		.two_sixths,
+		.three_sixths,
+		.four_sixths,
+		.five_sixths
+		{ width: 100%; }
+
+
+    #content						{ width:100%; float:none; }
+    #sidebar						{ width:100%; float:none;}
+
+.left{
+	float:none;
+	}
+
+.right{
+	float:none;
+	}
+
+.one_half_nopad,
+.one_third_nopad,
+.two_thirds_nopad,
+.three_fourths_nopad,
+.one_fourth_nopad,
+.one_fifth_nopad,
+.two_fifths_nopad,
+.three_fifths_nopad,
+.four_fifths_nopad,
+.one_sixth_nopad,
+.five_sixths_nopad
+	{
+	width:calc(100% - 60px);
+	padding: 30px;
+}
+
+	}

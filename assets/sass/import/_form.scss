@@ -1,0 +1,31 @@
+.form{
+    &.bg_orange{
+        background-color: $coral;
+        h1,h2,h3,h4,h5,h6,p,a{
+            color: $white;
+        }
+        input, textarea{
+            @include fieldoutline;
+            &::placeholder{
+                color: $white;
+                opacity: 0.6;
+            }
+        }
+    }
+    &.bg_white{
+        background-color: $white;
+        h1,h2,h3,h4,h5,h6,p,a{
+            color: $black;
+        }
+        input, textarea{
+            @include fieldsolid;
+        }
+    }
+    .text_area{
+        margin-right:5%;
+        margin: 50px 0;
+    }
+    .form_area{
+        margin: 50px 0;
+    }
+}
