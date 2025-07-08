@@ -1,0 +1,35 @@
+.team_members{
+    .team_wrap{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 1%;
+        margin-top: 50px;
+        @include respond-to(sm){
+            flex-direction: row;
+        }
+        .content{
+            width: 32%;
+            margin-bottom: 40px;
+            @include respond-to(sm){
+                width: 100%;
+            } 
+            img{
+                padding: 0;
+            }  
+            h4{
+                text-transform: uppercase;
+                margin-top: 10px;
+                margin-bottom: 15px;
+                padding-top: 10px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid $black;
+            }
+            p{
+                padding-bottom: 17px;
+                border-bottom: 1px solid $black;
+            }
+        }
+    }
+}

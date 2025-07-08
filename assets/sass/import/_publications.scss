@@ -1,0 +1,151 @@
+.pub_loop{
+    .flex_between{
+        align-items: center;
+        &.col_header{
+            border-bottom: 1px solid $black;
+            margin-bottom: 70px;
+            padding-bottom: 15px;
+        }
+        h3{
+            width: 100%;
+            @include respond-to(md){
+                width: 25%;
+                margin-bottom: 0;
+            }
+        }
+        p{
+            width: 100%;
+            @include respond-to(md){
+                width: 66%;
+                margin-bottom: 0;
+            }
+        }
+    }
+    .port_sort {
+        .cat_loop {
+            a {
+                &:hover{
+                    &:before{
+                        width: 0;
+                    }
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+                &.category-all {
+                    &.active{
+                        border-bottom: 7px solid $deepgreen;
+                        padding-bottom: 21px;
+                    }
+                }
+                &.category-report {
+                    &.active {
+                        border-bottom: 7px solid $seagreen;
+                        padding-bottom: 21px;
+                    }
+                }
+                &.category-article {
+                    &.active{
+                        border-bottom: 7px solid $coral;
+                        padding-bottom: 21px;
+                    }
+                }
+                &.category-method {
+                    &.active{
+                        border-bottom: 7px solid $lightblue;
+                        padding-bottom: 21px;
+                    }
+                }
+                &.category-uncategorised {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.pub_wrap {
+    .flex_wrap{
+        margin-bottom: 20px;
+        padding: 20px 0 ;
+        border-bottom: 1px solid $black;
+        gap: 10px;
+        .cat_col{
+            width: 150px;
+            .btn_fourth{
+                padding: 3px 15px;
+                font-weight: 600;
+                margin-top: 0;
+                font-family: $secondary-font;
+                &.Report{
+                    border-color: $seagreen ;
+                    color: $seagreen;
+                    &:hover{
+                        background-color: $seagreen;
+                        color: $white;
+                    }
+                }
+                &.Method{
+                    border-color: $lightblue ;
+                    color: $lightblue;
+                    &:hover{
+                        background-color: $lightblue;
+                        color: $white;
+                    }
+                }
+                &.Article{
+                    border-color: $coral ;
+                    color: $coral;
+                    &:hover{
+                        background-color: $coral;
+                        color: $white;
+                    }
+                }
+            }
+        }
+        .pub_title{
+            width:calc(50% - 170px);
+            @include respond-to('lg') {
+                margin-right: 100px;
+            }
+            h4{
+                margin-bottom: 0;
+                font-family: $primary-font;
+                text-transform: uppercase;
+            }
+        }
+        .description{
+            width:calc(50% - 120px);
+            p{
+                width: 80%;
+                margin-bottom: 0;
+            }
+        }
+        .down_butt{
+            width: 120px;
+            a{
+                white-space: nowrap;
+                text-transform: uppercase;
+                font-weight: 400;
+                margin-top: 0;
+                svg{
+                    margin-left: 10px;
+                }
+            }
+        }
+        @include transition;
+        height: auto;
+        opacity: 1;
+        &.hide {
+            height: 0;
+            opacity: 0;
+            margin: 0;
+            padding: 0;
+            @include transition;
+        }
+    }
+    a{
+        margin-top: 30px;
+        font-family: $primarysemi-font;
+    }
+}

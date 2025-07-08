@@ -1,0 +1,30 @@
+.page_header {
+    background-position: left;
+    padding-bottom: 0;
+    .container {
+        @include page_header;
+        .page_header_image {
+            @include respond-to('sm') {
+                min-height: 360px;
+            }
+            min-height: 660px;
+            @include respond-to('xl') {
+                min-height: 840px;
+            }
+            position: relative;
+            z-index: 10;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    .fade_banner{
+        height: 110vh;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

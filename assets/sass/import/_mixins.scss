@@ -1,0 +1,1168 @@
+/* Responsive Layouts */
+
+/// Mixin to manage responsive breakpoints
+/// @author Hugo Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+$breakpoints: (
+  'sm':  ( max-width:  767px ),
+  'md': ( min-width:  768px ),
+'ipad': (min-width: 960px),
+  'lg':  ( min-width: 1200px ),
+  'xl':  ( min-width: 1600px )
+) !default;
+
+/* Type sizes */
+
+/* Responsive grid */
+
+    @mixin respond-to ($breakpoint) {
+
+        // $breakpoint is simply a variable that can have several values
+
+        @if $breakpoint==tablet {
+
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1),
+    only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1),
+    only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1),
+    only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2),
+    only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2),
+    only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2),
+    only screen 
+  and (min-device-width: 834px) 
+  and (max-device-width: 1112px)
+  and (-webkit-min-device-pixel-ratio: 2),
+    only screen 
+  and (min-device-width: 834px) 
+  and (max-device-width: 834px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2),
+    only screen 
+  and (min-device-width: 1112px) 
+  and (max-device-width: 1112px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2),
+    only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2),
+    only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2)
+{
+            @content;
+        }
+      }
+
+      @if $breakpoint==mobile {
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2),
+  only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait),
+  only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape),
+  only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2),
+  only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait),
+  only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape),
+  only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2),
+  only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait), 
+  only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape), 
+  only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3),
+  only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait),
+  only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape),
+  only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3),
+  only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait),
+  only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape),
+  only screen 
+  and (min-device-width: 390px) 
+  and (max-device-width: 844px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait),
+  only screen 
+  and (min-device-width: 390px) 
+  and (max-device-width: 844px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape){ 
+        @content;
+        }
+      }
+        
+
+      @if $breakpoint==sm {
+@media only screen 
+    and (max-width: 768px) {
+        @content;
+        }
+      }
+    
+  @if $breakpoint==md {
+@media only screen 
+    and (min-width: 768px) {
+        @content;
+        }
+      }
+
+  @if $breakpoint==lg {
+@media only screen 
+    and (min-width: 1200px) {
+        @content;
+        }
+      }
+
+  @if $breakpoint==xl {
+@media only screen 
+    and (min-width: 1600px) {
+        @content;
+        }
+      }
+        
+  @if $breakpoint==xxl {
+@media only screen 
+    and (min-width: 1800px) {
+        @content;
+        }
+      }
+        
+    }
+
+
+
+
+/* Percentage values */
+
+$v100: 100%;
+$v95: 95%;
+$v90: 90%;
+$v85: 85%;
+$v80: 80%;
+$v75: 75%;
+$v70: 70%;
+$v65: 65%;
+$v60: 60%;
+$v55: 55%;
+$v50: 50%;
+$v45: 45%;
+$v40: 40%;
+$v35: 35%;
+$v30: 30%;
+$v25: 25%;
+$v20: 20%;
+$v15: 15%;
+$v10: 10%;
+$v5: 5%;
+$v0: 0;
+$auto: auto;
+$zeroauto: 0 auto;
+
+/* Pixel values */
+
+$px0: 0;
+$px5: 5px;
+$px10: 10px;
+$px15: 15px;
+$px20: 20px;
+$px25: 25px;
+$px30: 30px;
+$px35: 35px;
+$px40: 40px;
+$px45: 45px;
+$px50: 50px;
+$px55: 55px;
+$px60: 60px;
+$px65: 65px;
+$px70: 70px;
+$px75: 75px;
+$px80: 80px;
+$px85: 85px;
+$px90: 90px;
+$px95: 95px;
+$px100: 100px;
+
+/* Grid based width */
+
+$onehalf: 48%;
+$onethird: 30.66%;
+$twothirds: 65.33%;
+$onefourth: 22%;
+$threefourths: 74%;
+$onefifth: 16.8%;
+$twofifths: 37.6%;
+$threefifths: 58.4%;
+$fourfifths: 82.67%;
+$onesixth: 13.33%;
+$fivesixths: 82.67%;
+$gridmargin:  0 4% 0 0;
+$last: 0 0 0 0;
+
+
+/* Container values */
+
+$calcwidth: calc(100% - 40px);
+$calcpad: $px0 $px20;
+$perwidth: $v90;
+$perpad: $px0 $v5;
+
+$bigcalcwidth: calc(100% - 80px);
+$bigcalcpad: $px0 $px40;
+$bigperwidth: $v80;
+$bigperpad: $px0 $v10;
+
+
+@mixin container{
+    position: relative;
+    width: $perwidth;
+    width: $calcwidth;
+    padding: $perpad;
+    padding: $calcpad;
+    margin: $zeroauto;
+    max-width: 1600px;
+    min-width: 668px;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+@mixin bigcontainer{
+    width: $bigperwidth;
+    width: $bigcalcwidth;
+    padding: $bigperpad;
+    padding: $bigcalcpad;
+	position: relative;
+    margin: $zeroauto;
+    max-width: 2000px;
+    min-width: 668px;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+
+}
+
+@mixin clear{
+    clear: both;
+    display: block;
+}
+
+
+@mixin two_columns{
+    width:$v100;
+    @include respond-to(md){
+        width: $onehalf;
+        margin-right: 4%;
+        float: left;
+        &:nth-child(2n+1){
+            clear:both;
+        }
+        &:nth-child(2n+2){
+            margin-right:0;
+        }        
+    }
+    @include respond-to(tablet){
+        width: $onehalf;
+        margin-right: 4%;
+        float: left;
+        &:nth-child(2n+1){
+            clear:both;
+        }
+        &:nth-child(2n+2){
+            margin-right:0;
+        }        
+    }
+    @include respond-to(mobile){
+        width: $v100;
+    }
+    @include respond-to(small){
+        width: $v100;
+    }
+}
+
+@mixin three_columns{
+    width:$v100;
+    @include respond-to(md){
+        width: $onethird;
+        margin-right: 4%;
+        float: left;
+        &:nth-child(3n+1){
+            clear:both;
+        }
+        &:nth-child(3n+3){
+            margin-right:0;
+        }
+    }
+    @include respond-to(tablet){
+        width: $onethird;
+        margin-right: 4%;
+        float: left;
+        &:nth-child(3n+1){
+            clear:both;
+        }
+        &:nth-child(3n+3){
+            margin-right:0;
+        }
+    }
+    @include respond-to(mobile){
+        width: $v100;
+    }
+    @include respond-to(small){
+        width: $v100;
+    }
+}
+
+@mixin four_columns{
+    width:$v100;
+    @include respond-to(md){
+        width: $onefourth;
+        margin-right: 4%;
+        float: left;
+        &:nth-child(4n+1){
+            clear:both;
+        }
+        &:nth-child(4n+4){
+            margin-right:0;
+        }
+    }
+    @include respond-to(tablet){
+        width: $onefourth;
+        margin-right: 4%;
+        float: left;
+        &:nth-child(4n+1){
+            clear:both;
+        }
+        &:nth-child(4n+4){
+            margin-right:0;
+        }
+    }
+    @include respond-to(mobile){
+        width: $v100;
+    }
+    @include respond-to(small){
+        width: $v100;
+    }
+}
+
+@mixin five_columns{
+    width:$v100;
+    @include respond-to(md){
+        width: $onefifth;
+        margin-right: 4%;
+        float: left;
+        &:nth-child(5n+1){
+            clear:both;
+        }
+        &:nth-child(5n+5){
+            margin-right:0;
+        }
+    }
+    @include respond-to(tablet){
+        width: $onefifth;
+        margin-right: 4%;
+        float: left;
+        &:nth-child(5n+1){
+            clear:both;
+        }
+        &:nth-child(5n+5){
+            margin-right:0;
+        }
+    }
+    @include respond-to(mobile){
+        width: $v100;
+    }
+    @include respond-to(small){
+        width: $v100;
+    }
+}
+
+@mixin six_columns{
+    width:$v100;
+    @include respond-to(md){
+        width: $onesixth;
+        margin-right: 4%;
+        float: left;
+        &:nth-child(6n+1){
+            clear:both;
+        }
+        &:nth-child(6n+6){
+            margin-right:0;
+        }
+    }
+    @include respond-to(tablet){
+        width: $onesixth;
+        margin-right: 4%;
+        float: left;
+        &:nth-child(6n+1){
+            clear:both;
+        }
+        &:nth-child(6n+6){
+            margin-right:0;
+        }
+    }
+    @include respond-to(mobile){
+        width: $v100;
+    }
+    @include respond-to(small){
+        width: $v100;
+    }
+}
+
+@mixin footer_cells_padding {
+    @include respond-to(sm) {
+        padding: 1.8rem 0;
+    }
+    @include respond-to('md') {
+        padding: 1.8rem;
+    }
+    @include respond-to('lg') {
+        padding: 2.8rem;
+    }
+}
+
+@mixin cat_loc_tag {
+    border: solid 1px $black;
+    padding: 20px 10px;
+    border-radius: 40px;
+    padding: 0px 10px;
+    height: fit-content;
+}
+
+@mixin quicktransition {
+    -webkit-transition: (.2s);
+    -moz-transition: (.2s);
+    -ms-transition: (.2s);
+    -o-transition: (.2s);
+    transition: (.2s);
+}
+
+
+@mixin transition {
+    -webkit-transition: (.5s);
+    -moz-transition: (.5s);
+    -ms-transition: (.5s);
+    -o-transition: (.5s);
+    transition: (.5s);
+}
+
+@mixin middletransition {
+    -webkit-transition: (1.5s);
+    -moz-transition: (1.5s);
+    -ms-transition: (1.5s);
+    -o-transition: (1.5s);
+    transition: (1.5s);
+}
+
+@mixin longtransition {
+    -webkit-transition: (3s);
+    -moz-transition: (3s);
+    -ms-transition: (3s);
+    -o-transition: (3s);
+    transition: (3s);
+}
+
+
+@mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+    -moz-transform: rotate($degrees);
+    -ms-transform: rotate($degrees);
+    -o-transform: rotate($degrees);
+    transform: rotate($degrees);
+}
+
+@mixin scale($ratio) {
+  -webkit-transform: scale($ratio);
+     -moz-transform: scale($ratio);
+      -ms-transform: scale($ratio);
+       -o-transform: scale($ratio);
+          transform: scale($ratio);
+}
+
+@mixin border-radius() {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+@mixin bg_cover{
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;        
+}
+
+@mixin letterspace{
+    letter-spacing: 5px;
+    color: $white;
+    text-transform: uppercase;
+}
+
+@mixin partners_list {
+    padding: 60px 0;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    justify-content: space-between;
+    @include respond-to('md') {
+        padding: 20px 0 0px 0;
+        justify-content: space-evenly;
+    }
+    @include respond-to('lg') {
+        padding: 40px 0 00px 0;
+        justify-content: space-evenly;
+    }
+    @include respond-to('xl') {
+        padding: 60px 0 0px 0;
+        justify-content: space-evenly;
+    }
+    
+    img {
+        max-width: 120px;
+        max-height: 80px;
+        @include respond-to('lg') {
+            max-width: 150px;
+            max-height: 80px;
+        }
+    }
+}
+
+@mixin buttondefault{
+    font-family: $primary-font;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    margin: 20px 0 0 0;
+    border-radius: 0px;
+    text-transform: uppercase;
+    overflow: hidden;
+    @include transition;
+    padding-right: 30px;
+    &:before{
+		background-color: $black;
+	}
+    &:hover {
+        text-shadow: 0px 0px 0 black, 0px 0px 0 black, 0px 1px 0 black, 0px 0px 0px black; 
+        @include transition;
+		&:before{
+            width: calc(100% - 30px);
+			@include transition;
+		}
+    }
+    &:after{
+        content: url('/wp-content/themes/designdough/assets/images/svg/button-arrow.svg');
+        position: absolute;
+        right: 12px;
+        top: 1px;
+        margin-left: 20px;
+        @include transition;
+    }
+    &:hover {
+        @include transition;
+        &:after{
+            transform: rotate(45deg);
+            @include transition;
+        }
+    }
+}
+
+@mixin buttonsecond{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    margin: 20px 0 0 0;
+    border-radius: 0px;
+    text-transform: uppercase;
+    overflow: hidden;
+    @include transition;
+    padding-right: 30px;
+    font-family: $primarysemi-font;
+    &:after{
+        content: url('/wp-content/themes/designdough/assets/images/svg/button-arrow-white.svg');
+        position: absolute;
+        right: 12px;
+        top: 1px;
+        margin-left: 20px;
+        @include transition;
+    }
+    &:hover {
+        @include transition;
+        &:after{
+            transform: rotate(45deg);
+            @include transition;
+        }
+    }
+}
+
+@mixin buttonthird{
+    font-family: $secondary-font;
+    position: relative;
+    display: inline-block;
+    color: $white;
+    text-decoration: none;
+    padding: 5px 25px;
+    border: 2px $white solid;
+    border-radius: 50px;
+    background-color: transparent;
+    text-transform: uppercase;
+    overflow: hidden;
+    font-family: $primarysemi-font;
+    @include transition;
+    &:hover {
+        background-color: $white;
+        border: 2px $white solid;
+        color: $black;
+        @include transition;
+        }
+}
+
+@mixin buttonfourth{
+    font-family: $primary-font;
+    position: relative;
+    display: inline-block;
+    color: $black;
+    text-decoration: none;
+    padding: 10px 34px;
+    width: auto;
+    border: 2px $black solid;
+    border-radius: 50px;
+    background-color:$offwhite;
+    text-transform: uppercase;
+    overflow: hidden;
+    @include transition;
+    &:before{
+        width: 0;
+    }
+    &:hover {
+        background-color: $black;
+        border: 2px $black solid;
+        color: $white;
+        @include transition;
+        &:before{
+            width: 0;
+        }
+    }
+}
+
+@mixin buttonfifth{
+    font-family: $primarysemi-font;
+    position: relative;
+    display: inline-block;
+    color: $white;
+    text-decoration: none;
+    padding: 5px 25px;
+    width: auto;
+    border: 2px $black solid;
+    border-radius: 50px;
+    background-color:$black;
+    text-transform: uppercase;
+    overflow: hidden;
+    @include transition;
+    &:before{
+        width: 0;
+    }
+    &:hover {
+        background-color: $black;
+        border: 2px $black solid;
+        color: $white;
+        @include transition;
+        &:before{
+            width: 0;
+        }
+    }
+}
+
+
+@mixin textboxpad{
+    width:90%;
+    padding: 5vh 0;
+    margin: 0 auto;
+    @include respond-to('md'){
+        padding: 10vh 0;
+        width:60%;
+        margin: 0 auto;
+    }
+}
+
+@mixin textboxsmallpad{
+    width:90%;
+    padding: 0vh 0;
+    margin: 0 auto;
+    @include respond-to('md'){
+        padding: 0vh 0;
+        width:60%;
+        margin: 0 auto;
+    }
+}
+
+@mixin fieldsolid{
+    background-color: $white;
+    border: 2px solid $white;
+    width:95%;
+    padding: 5px 2.5%;
+    margin-bottom: 15px;
+    color: $black;
+    border-radius: 5px;
+}
+
+@mixin fieldoutline{
+    background-color: $coral;
+    border: 2px solid $white;
+    width:95%;
+    padding: 5px 2.5%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    color: $white;
+}
+
+@mixin slidebg{
+    width: calc(100% - 60px);
+    backdrop-filter: blur(5px);
+    background-color: $whitealpha;
+    padding: $px30;
+    margin: 0%;
+    text-align: center;
+    @include border-radius;
+    @include respond-to('md'){
+        text-align: left;
+        padding: $px30 $px50;
+        width: 100%;
+        margin: 0;
+        position: absolute;
+        z-index: 200;
+        width:50%;
+        &.overleft{
+            left:0;
+        }
+        &.overright{
+            right:0;
+        }
+        &.overcenter{
+            left:25%;
+        }
+    }
+    a.button{
+        @include buttonsecond;
+    }
+}
+
+@mixin textlink{
+    -webkit-font-smoothing: antialiased;
+	color: $black;
+	font-weight: 500;
+	text-decoration: none;
+	position: relative;
+    display: inline-block;
+	@include transition;
+	padding-bottom: 5px;
+	&:before{
+		content:"";
+		height: 2px;
+		width: 0%;
+		position: absolute;
+		bottom: 0;
+		background-color: $coral;
+		@include transition;
+	}
+	&:hover{
+		@include transition;
+		&:before{
+			width: 100%;
+			@include transition;
+		}
+	}
+
+}
+
+
+@mixin borderradiustop{
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+@mixin backgroundtext{
+    &.coral{
+        background-color: $coral;
+        h1,h2,h3,h4,h5,h6,p, li,{
+            color: $white;
+        }
+        .title{
+            border-bottom: 1px solid $white;
+        }
+        a{
+            color: $white;
+        }
+    }
+    &.deepgreen{
+        background-color: $deepgreen;
+        h1,h2,h3,h4,h5,h6,p, li{
+            color: $white;
+        }
+        .title{
+            border-bottom: 1px solid $white;
+        }
+        a{
+            color: $white;
+        }
+    }
+    &.seagreen{
+        background-color: $seagreen;
+        h1,h2,h3,h4,h5,h6,p, li{
+            color: $white;
+        }
+        .title{
+            border-bottom: 1px solid $white;
+        }
+        a{
+            color: $white;
+        }
+    }
+    &.lightblue{
+        background-color: $lightblue;
+        h1,h2,h3,h4,h5,h6,p, li{
+            color: $white;
+        }
+        .title{
+            border-bottom: 1px solid $white;
+        }
+        a{
+            color: $white;
+        }
+    }
+    &.blue{
+        background-color: $blue;
+        h1,h2,h3,h4,h5,h6,p, li{
+            color: $white;
+        }
+        .title{
+            border-bottom: 1px solid $white;
+        }
+        a{
+            color: $white;
+        }
+    }
+    &.lightseagreen{
+        background-color: $lightseagreen;
+        h1,h2,h3,h4,h5,h6,p, li{
+            color: $black;
+        }
+        .title{
+            border-bottom: 1px solid $black;;
+        }
+        a{
+            color: $black;
+        }
+    }
+    &.white{
+        background-color: $offwhite;
+        h1,h2,h3,h4,h5,h6,p, li{
+            color: $black;
+        }
+        .title{
+            border-bottom: 1px solid $black;;
+        }
+        a{
+            color: $black;
+        }
+    }
+}
+
+@mixin accordion{
+    .flex_wrap{
+        border-bottom: 1px solid $black;
+        padding-bottom: 0px;
+        margin-bottom: 30px;
+        @include middletransition;
+        @include respond-to(sm){
+            flex-direction: row;
+        }
+        .content{
+            width: calc(100% - 100px);
+            @include respond-to(sm){
+                width: calc(100% - 50px);
+            }
+        }
+        .arrow{
+            width: 100px;
+            @include respond-to(sm){
+                width: 50px;
+            }
+            svg{
+                @include transition;
+            }
+        }
+        .textarea{
+            margin-top: 0px;
+            width: 60%;
+            height: auto;
+            max-height: 0px;
+            overflow: hidden;
+            @include transition;
+            @include respond-to(sm){
+                width: 100%;
+            }
+
+        }
+        &.open{
+            .arrow{
+                svg{
+                    @include rotate(90deg);
+                    @include transition;
+                }
+            }
+            margin-bottom: 30px;
+            @include transition;
+            .textarea{
+                margin-top: 0px;
+                max-height: 1000px;
+                overflow: visible;
+                @include middletransition
+            }    
+        }
+    }
+}
+
+@mixin page_header {
+    .page_header_title_wrap {
+        display: grid;
+        background-size: cover;
+        background-position: center;
+        justify-content: space-between;
+        position: relative;
+        height: 80vh;
+        @include respond-to('sm') {
+            display: block;
+            padding-top: 100px;
+            height: 60vh;
+        }
+        .title_wrap {
+            position: fixed;
+            opacity: 1;
+            bottom: 20vh;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            z-index: 1;
+            text-transform: uppercase;
+            @include transition;
+            width: 90%;
+            @include respond-to('sm') {
+                width: 90%;
+                bottom: 30vh;
+                flex-wrap: wrap;
+
+            }
+            padding-top: 0.2em;
+            padding-right: 0.05em;
+            padding-bottom: 0.1em;
+            overflow: hidden;
+            line-height: 0.5em;
+            &.news_wrap{
+                display: block;
+            }
+            &.full_viewheight {
+                bottom: 10vh;
+            }
+        //    .page_title {
+        //         text-transform: uppercase;
+        //         &.hide {
+        //             @include transition;
+        //             opacity: 0;
+        //             visibility: hidden;
+        //         }
+        //     }
+
+            .letter {
+                transform-origin: 50% 100%;
+                display: inline-block;
+                line-height: 1em;
+            }
+
+            .subtitle {
+                text-transform: none;
+                opacity: 1;
+                width: 85%;
+                z-index: 1;
+                @include transition;
+                @include respond-to('md') {
+                    opacity: 1;
+                    width: 30%;
+                    margin-left: 5%;
+                    z-index: 1;
+                }
+                @include respond-to('lg') {
+                    width: 35%;
+                    margin-left: 5%;
+                }
+                &.hide {
+                    @include transition;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+            .sub_title {
+                opacity: 1;
+                width: 85%;
+                z-index: 1;
+                align-items: center;
+                @include transition;
+                @include respond-to('md') {
+                    opacity: 1;
+                    width: 100%;
+                    margin-left: 0%;
+                    z-index: 1;
+                }
+                &.hide {
+                    @include transition;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                a{
+                    margin-right: 5%;
+                    @include respond-to('sm') {
+                        padding: 1px 14px;
+                    }
+                }
+            }
+            .newstitle {
+                opacity: 1;
+                width: 20%;
+                z-index: 1;
+                text-transform: uppercase;
+                @include transition;
+                @include respond-to(sm){
+                    bottom: 38vh;
+                }
+                @include respond-to('lg') {
+                    width: 25%;
+                }
+                &.hide {
+                    @include transition;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+        }
+        .scroll_arrow {
+            @include respond-to('sm') {
+                display: none;
+            }
+            position: fixed;
+            bottom: 150px;
+            right: 20px;
+            max-width: 40px;
+            margin-bottom: 30px;
+            animation-name: bounce;
+            animation-timing-function: ease;
+            animation-duration: 1s;
+            @include respond-to('lg') {
+                width: 10%;
+            }
+            &.hide {
+                @include transition;
+                opacity: 0;
+                z-index: -1;
+                margin: 0;
+            }
+        }
+        @keyframes bounce {
+            0%   { transform: translateY(0); }
+            50%  { transform: translateY(-100px); }
+            100% { transform: translateY(0); }
+        }
+
+        &.fade_banner {
+            min-height: 500px;
+        }
+        &.full_viewheight {
+            height: 100vh !important;
+        }
+    }
+
+}

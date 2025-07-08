@@ -1,0 +1,34 @@
+.image-text-col{
+    position: relative;
+    .content{
+        display: block;
+        @include respond-to(md){
+            text-align: left;
+            display:flex;
+            align-items: center;
+        }
+    }
+    .image{
+        @include respond-to(sm){
+            margin-bottom:20px;
+        }
+        @include border-radius;
+    }
+    .wrap_image_left{
+        .content{            
+        }        
+    }
+    .wrap_image_right{
+        .content{
+            flex-direction: row-reverse;
+            .text{
+                h1,h2,h3,h4,h5,h6,p,a{
+                    margin-right: 4%;
+                }
+            }
+            .image{
+                margin-right:0;
+            }
+        }        
+    }
+}
